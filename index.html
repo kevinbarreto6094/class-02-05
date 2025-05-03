@@ -1,29 +1,34 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dietmar</title>
+    <title>Suma con do...while</title>
 </head>
 <body>
     <script>
+        var numero = prompt("Escribe un número del 0 al 100:");
+        numero = parseInt(numero);
 
-        var x = 0;
+        if (numero >= 0 && numero <= 100) {
+            var x = 0;
+            var suma = 0;
+            var mensaje = "";
 
-var datos= [20,30,40];   
-   
-do{
+            do {
+                suma += x;
+                mensaje += x;
 
-    document.write(datos[x]+"<br>")
+                if (x < numero) {
+                    mensaje += "+";
+                }
 
-x=x+1;
-}while(x<datos.length);
+                x++;
+            } while (x <= numero);
 
-
-
-
-
+            document.write(mensaje + "=" + suma);
+        } else {
+            document.write("Ingrese un número válido entre 0 y 100.");
+        }
     </script>
 </body>
 </html>
